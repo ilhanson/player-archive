@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, css } from 'aphrodite/no-important';
 
+import theme from '../ThemeProvider/theme';
+
 function PlayerSearchForm(props) {
     const [idField, setIdField] = useState('');
 
@@ -11,20 +13,34 @@ function PlayerSearchForm(props) {
     
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="p_id" className={css(styles.header)}>Enter player's id:</label>
-            <input type="text" id="fname" name="p_id" placeholder="Player Id" className={css(styles.header)}
-                value={idField}
-                onChange={e => setIdField(e.target.value)}
-            />
-            <button type="submit">Go</button>
+            <div className={css(theme.styles.formGroup)}>
+                <label htmlFor="p_id" className={css(styles.label)}>*Enter player's id:</label><br />
+                <input type="text" id="fname" name="p_id" className={css(theme.styles.input, theme.styles.customFocus)}
+                    value={idField}
+                    onChange={e => setIdField(e.target.value)}
+                />
+            </div>
+            <button type="submit" className={css(styles.submitButton, theme.styles.customFocus)}>Go</button>
         </form>
     );
 }
 
 const styles = StyleSheet.create({
-    header: {
-
-    }
+    submitButton: {
+        backgroundColor: theme.accent.color,
+        color: theme.primary.backgroundColor,
+        border: '1px solid rgba(0,0,0,0.2)',
+        padding: 2,
+        height: '1.6rem',
+        minWidth: 50,
+        margin: '0 8px'
+    },
+    label: {
+        color: theme.accent.color,
+        opacity: 0.9,
+        lineHeight: '1.3rem',
+        fontSize: '0.9rem'
+    },
 });
 
 export default PlayerSearchForm;

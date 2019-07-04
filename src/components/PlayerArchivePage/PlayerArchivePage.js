@@ -4,11 +4,12 @@ import { StyleSheet, css } from 'aphrodite/no-important';
 import PlayerSearchForm from '../PlayerSearchForm/PlayerSearchForm';
 import PlayerDetailsContainer from '../PlayerDetails/PlayerDetailsContainer';
 import PlayerNotAvailable from '../PlayerNotAvailable/PlayerNotAvailable';
+import theme from '../ThemeProvider/theme';
 
 function PlayerArchivePage(props) {
     return (
         <React.Fragment>
-            <h1 className={css(styles.header)}>Player Archive</h1>
+            <h1 className={css(styles.header, theme.styles.centerText)}>Player Archive</h1>
             <section>
                 <h2 className={css(styles.sectionHeader)}>Search</h2>
                 <PlayerSearchForm
@@ -35,7 +36,21 @@ function PlayerArchivePage(props) {
 
 const styles = StyleSheet.create({
     header: {
-
+        color: theme.primary.color,
+        letterSpacing: '0.04rem',
+        lineHeight: 0.85,
+        fontSize: '3rem',
+        margin: '24px 0',
+        fontWeight: 500,
+        fontStyle: 'italic'
+    },
+    sectionHeader: {
+        color: theme.primary.color,
+        letterSpacing: '0.04rem',
+        lineHeight: 1.4,
+        fontSize: '1.7rem',
+        margin: '24px 0 12px 0',
+        fontWeight: 400
     }
 });
 

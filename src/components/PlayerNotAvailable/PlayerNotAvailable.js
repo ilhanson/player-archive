@@ -1,15 +1,17 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite/no-important';
 
+import theme from '../ThemeProvider/theme';
+
 function PlayerNotAvailable() {
     return (
-        <p className={css(styles.line)}>Player is not available</p>
+        <p className={css(styles.text)}>Player is not available :(</p>
     );
 }
 
 const styles = StyleSheet.create({
     text: {
-
+        color: theme.secondary.color,
     }
 });
 

@@ -28,6 +28,7 @@ PlayerDetails.defaultProps = {
 
 const styles = StyleSheet.create({
     detailGroup: {
+        margin: '12px 0 18px',
     }
 });
 

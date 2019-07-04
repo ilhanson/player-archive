@@ -8,12 +8,13 @@ function PlayerArchivePageContainer() {
   const [player, playerError] = useDataApi(playerId);
 
 
-  return <PlayerArchivePage
-    playerId={playerId}
-    onPlayerSearch={id => setPlayerId(id)}
-    isSearchDirty={Boolean(player || playerError)}
-    player={player}
-  />;
+  return (
+    <PlayerArchivePage
+      playerId={playerId}
+      onPlayerSearch={id => setPlayerId(id)}
+      isSearchDirty={Boolean(player || playerError)}
+      player={player} />
+  );
 }
 
 export default PlayerArchivePageContainer;
