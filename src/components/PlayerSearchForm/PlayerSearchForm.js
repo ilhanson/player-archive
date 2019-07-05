@@ -15,12 +15,13 @@ function PlayerSearchForm(props) {
         <form onSubmit={handleSubmit}>
             <div className={css(theme.styles.formGroup)}>
                 <label htmlFor="p_id" className={css(styles.label)}>*Enter player's id:</label><br />
-                <input type="text" id="fname" name="p_id" className={css(theme.styles.input, theme.styles.customFocus)}
+                <input type="text" id="p_id" name="p_id" className={css(theme.styles.input, theme.styles.customFocus)}
                     value={idField}
                     onChange={e => setIdField(e.target.value)}
+                    data-testid="search-input"
                 />
             </div>
-            <button type="submit" className={css(styles.submitButton, theme.styles.customFocus)}>Go</button>
+            <button type="submit" className={css(styles.submitButton, theme.styles.customFocus)} data-testid="submit-button">Go</button>
         </form>
     );
 }

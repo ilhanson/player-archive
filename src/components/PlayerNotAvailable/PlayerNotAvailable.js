@@ -5,7 +5,7 @@ import theme from '../ThemeProvider/theme';
 
 function PlayerNotAvailable() {
     return (
-        <p className={css(styles.text)}>Player is not available :(</p>
+        <p className={css(styles.text)} data-testid="not-available-text">Player is not available :(</p>
     );
 }
 

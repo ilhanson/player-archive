@@ -21,7 +21,6 @@ const useApi = (requestUrl) => {
           const result = await axios.get(API_URL + requestUrl);
           setData(result.data);
         } catch (error) {
-          console.error(error);
           // common error handler code can be run here
           setError(true);
         }

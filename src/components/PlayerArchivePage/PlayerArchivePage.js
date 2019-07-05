@@ -21,7 +21,7 @@ function PlayerArchivePage(props) {
                 // or after resetting the search with empty string search
                 props.isSearchDirty &&
                     <section>
-                        <h2 className={css(styles.sectionHeader)}>Player Details</h2>
+                        <h2 className={css(styles.sectionHeader)} data-testid="details-header">Player Details</h2>
                         {
                             props.player && props.player.active !== 'false' ?
                                 <PlayerDetailsContainer player={props.player} />

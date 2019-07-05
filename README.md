@@ -19,14 +19,19 @@ in addition to the libraries provided by **Create React App**.
 
 
 ##  Components Architecture
-* `ThemeProvider`
+
+* `HomeScreen` > `ThemeProvider` > `Container` > `ContentCard`
     * `PlayerArchivePageContainer` > `PlayerArchivePage`
         * `PlayerSearchForm`
         * **IF** search has been made:
             * `PlayerNotAvailable`
             * **XOR**
-            * `PlayerDetailsContainer` > `PlayerDetails`
-                * `PlayerInfoLine`
+            * `PlayerDetailsContainer` > `PlayerDetails` > `PlayerInfoLine`
+
+
+##  Test Architecture
+
+Two components are tested before building the project. The first one is the `HomeScreen`, which is tested to see if the application starts and renders without failure, and the second one is the `PlayerArchivePageContainer` to check if app responds accordingly to three different player profiles provided.
 
 
 ##  How to Run Locally
